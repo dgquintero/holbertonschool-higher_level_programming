@@ -4,7 +4,7 @@ def roman_to_int(roman_string):
     value = 0
     if roman_string is not None or roman_string is str:
         for i in roman_string:
-            if i == conrom.keys():
+            if i in conrom.keys():
                 value += conrom[i]
         return value
     else:
