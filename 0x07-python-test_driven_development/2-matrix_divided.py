@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def matrix_divided(matrix, div):
-
+    new_matrix = []
     size_= len(matrix[0])
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
@@ -20,5 +20,5 @@ def matrix_divided(matrix, div):
                 raise TypeError(
                     "matrix must be a matrix (list of lists) \
 of integers/floats")
-
-    return [[round(j / div, 2) for j in i] for i in matrix]
+    new_matrix = [[round(j / div, 2) for j in i] for i in matrix]
+    return (new_matrix)
