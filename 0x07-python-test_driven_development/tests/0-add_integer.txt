@@ -11,5 +11,10 @@ This is a text file.  First import
 
 Now use it:
 
+test cases for positive numbers
     >>> add_integer(6, 8)
     14
+
+test cases for negative numbers
+    >>> add_integer(-10, -7)
+    -17
