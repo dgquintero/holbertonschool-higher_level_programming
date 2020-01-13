@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+"""Module to div a matrix for a number"""
+
+
 def matrix_divided(matrix, div):
+    """Function that returns the division of all elements of a  matrix for
+    an integer."""
     new_matrix = []
-    size_= len(matrix[0])
+    size_ = len(matrix[0])
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
 

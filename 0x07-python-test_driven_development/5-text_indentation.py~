@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+def text_indentation(text):
+    if type(text) is not str:
+        raise TypeError("text must be a string")
+
+    sentinel = 0
+    for i in text:
+        if sentinel == 0:
+            if i == ' ':
+                continue
+            else:
+                sentinel = 1
+        if sentinel == 1:
+
+            if i == "." or i == ":" or i == "?":
+                print(i)
+                print()
+                sentinel = 0
+            else:
+                print(i, end="")
