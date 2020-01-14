@@ -3,8 +3,8 @@
 
 
 def text_indentation(text):
-"""Function that prints a text indented. If the function found a this special
- characters ":" or  "." or "?" puts a new line in the text"""
+    """Function that prints a text indented. If the function found a this
+    special characters ":" or  "." or "?" puts a new line in the text"""
     if type(text) is not str:
         raise TypeError("text must be a string")
 
