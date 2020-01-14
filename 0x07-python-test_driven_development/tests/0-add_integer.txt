@@ -54,3 +54,10 @@ At least one argument must be provided.
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
+
+Test for a tuple
+
+    >>> add_integer((1, 8, 7))
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
