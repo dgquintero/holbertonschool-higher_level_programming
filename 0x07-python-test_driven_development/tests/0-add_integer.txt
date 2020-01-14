@@ -18,3 +18,19 @@ test cases for positive numbers
 test cases for negative numbers
     >>> add_integer(-10, -7)
     -17
+
+test case negative, positive
+    >>> add_integer(-10, 8)
+    -2
+
+test case list, int:
+    >>> add_integer([3, 86, 7, 5], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+test case int, infinity float is passed:
+    >>> add_integer(28, float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
