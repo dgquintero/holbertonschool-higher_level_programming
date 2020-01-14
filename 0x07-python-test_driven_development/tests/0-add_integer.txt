@@ -40,3 +40,17 @@ Test case fot nan
     Traceback (most recent call last):
     ...
     ValueError: cannot convert float NaN to integer
+
+Only integers and floats may be provided.
+
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+
+At least one argument must be provided.
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
