@@ -18,6 +18,7 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
+
     @property
     def width(self):
         return self.__width
@@ -33,6 +34,7 @@ class Rectangle:
     @property
     def height(self):
         return self.__height
+
     @height.setter
     def height(self, value):
         self.__height = value
@@ -60,6 +62,7 @@ class Rectangle:
             if i is not self.height - 1:
                 str_rep += "\n"
         return str_rep
+
     def __repr__(self):
         """ return a string representation of the rectangle """
         return ("Rectangle({}, {})".format(self.width, self.height))
