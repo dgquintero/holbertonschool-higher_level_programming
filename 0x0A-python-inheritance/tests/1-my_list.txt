@@ -1,0 +1,19 @@
+The ``1-my_list`` module
+============================
+
+Using ``MyList``
+---------------------
+
+This is a text file.  First import
+``MyList`` from the ``1-my_list`` module:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+Now use it:
+
+test cases for list of positive ints:
+    >>> list_num = [1, 8, 20, 5, 7, 4]
+    >>> MyList.print_sorted(list_num)
+    [1, 4, 5, 7, 8, 20]
+
+
