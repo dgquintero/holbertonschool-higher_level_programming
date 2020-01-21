@@ -1,0 +1,11 @@
+The ``7-base_geometry`` module
+============================
+
+Using ``BaseGeometry``
+---------------------
+
+This is a text file.  First import
+``BaseGeometry`` from the ``7-base_geometry`` module:
+
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
