@@ -14,7 +14,7 @@ class Student:
         _dict = {}
         for i in attrs:
             try:
-                _dict[i] = self.__dict__
+                _dict[i] = self.__dict__[i]
             except:
                 pass
         return _dict
