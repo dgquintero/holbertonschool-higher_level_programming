@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-from sys
+from sys import argv
+
 
 save_to_json = __import__('7-save_to_json_file.py').save_to_json_file
-"""class call it BaseGeometry"""
-
 load_from_json = __import__('8-load_from_json_file.py').load_from_json_file
 
-arg = sys.argv[1:]
-try:
-    c = load_from_json("my_add.json")
+filename = 'add_item.json'
 
-except IOError:
+try:
+    c = load_from_json(filename)
+except:
     c = []
 
-save_to_json(a + arg, "my_add.json")
+for i in argv[1:]:
+    c.append(i)
+save_to_json(c, filename)
