@@ -3,6 +3,6 @@ import json
 
 
 def load_from_json_file(filename):
-    """function that writes an Object to a text file, using a JSON representation"""
+    """function that reads a text file (UTF8) and prints it to stdout"""
     with open(filename, mode='w', encoding='utf-8') as f: 
-        json.dump(my_obj, f)
+        json.load(my_obj, f)
