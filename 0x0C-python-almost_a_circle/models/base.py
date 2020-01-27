@@ -33,7 +33,7 @@ class Base:
             obj = []
         else:
             obj = [x.to_dictionary() for x in list_objs]
+        obj = cls.to_json_string(obj)
         fl = cls.__name__ + ".json"
         with open(fl, "w") as f:
-            json.dump(obj, f)
-
+            f.write(obj)
