@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 from models.base import Base
+"""Module for Rectangle class."""
 
 
 class Rectangle(Base):
+    """Class Rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
@@ -12,6 +14,7 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
+    """property for width"""
     def width(self):
         return self.__width
 
@@ -24,6 +27,7 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
 
     @property
+    """property for height"""
     def height(self):
         return self.__height
 
