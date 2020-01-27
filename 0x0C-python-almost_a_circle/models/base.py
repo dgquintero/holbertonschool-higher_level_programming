@@ -45,3 +45,16 @@ class Base:
             return ls
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """class method crate"""
+        if cls.__name__ == "Square":
+            dummy = cls(4)
+            dummy.update(**dictionary)
+            return dummy
+
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 4)
+            dummy.update(**dictionary)
+            return dummy
