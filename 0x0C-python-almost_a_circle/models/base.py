@@ -37,3 +37,11 @@ class Base:
         fl = cls.__name__ + ".json"
         with open(fl, "w") as f:
             f.write(obj)
+
+    def from_json_string(json_string):
+        """returns the list represented by jsonç-sting"""
+        ls = []
+        if json_string is None:
+            return ls
+        else:
+            return json.loads(json_string)
