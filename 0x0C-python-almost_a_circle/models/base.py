@@ -35,5 +35,5 @@ class Base:
             obj = [x.to_dictionary() for x in list_objs]
         fl = cls.__name__ + ".json"
         with open(fl, "w") as f:
-            return json.dump(obj, f)
+            json.dump(obj, f)
 
