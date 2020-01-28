@@ -39,7 +39,7 @@ class Base:
             f.write(obj)
 
     def from_json_string(json_string):
-        """returns the list represented by jsonç-sting"""
+        """returns the list represented by json-sting"""
         ls = []
         if json_string is None:
             return ls
@@ -58,3 +58,18 @@ class Base:
             dummy = cls(1, 4)
             dummy.update(**dictionary)
             return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """load from file func"""
+        fl = cls.__name__ + "json"
+        ls = []
+        try:
+            txt = []
+            with open(fl, 'r') as f:
+                txt = cls.from_json_string(f.read())
+                for tmp in txt:
+                    ls.append(cls.create(**tmp))
+        except:
+            pass
+        return ls
