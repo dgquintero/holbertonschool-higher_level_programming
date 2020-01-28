@@ -22,7 +22,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """returns the representation of a str to json"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            list_dictionaries = []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -38,6 +38,7 @@ class Base:
         with open(fl, "w") as f:
             f.write(obj)
 
+    @staticmethod
     def from_json_string(json_string):
         """returns the list represented by json-sting"""
         ls = []
@@ -49,20 +50,18 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """class method crate"""
-        if cls.__name__ == "Square":
-            dummy = cls(4)
-            dummy.update(**dictionary)
-            return dummy
-
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 4)
-            dummy.update(**dictionary)
-            return dummy
+        if cls.__name__ == "Square":
+            dummy = cls(3)
+
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
         """load from file func"""
-        fl = cls.__name__ + "json"
+        fl = cls.__name__ + ".json"
         ls = []
         try:
             txt = []
@@ -70,6 +69,6 @@ class Base:
                 txt = cls.from_json_string(f.read())
                 for obj in txt:
                     ls.append(cls.create(**obj))
-        except:
-            pass
+        except FileNotFoundError:
+            ls = []
         return ls
