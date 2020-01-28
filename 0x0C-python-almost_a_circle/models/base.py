@@ -68,8 +68,8 @@ class Base:
             txt = []
             with open(fl, 'r') as f:
                 txt = cls.from_json_string(f.read())
-                for tmp in txt:
-                    ls.append(cls.create(**tmp))
+                for obj in txt:
+                    ls.append(cls.create(**obj))
         except:
             pass
         return ls
