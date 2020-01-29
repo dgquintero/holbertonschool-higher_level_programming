@@ -6,6 +6,7 @@ import turtle
 import time
 import random
 
+
 class Base:
     """Class Base"""
     __nb_objects = 0
