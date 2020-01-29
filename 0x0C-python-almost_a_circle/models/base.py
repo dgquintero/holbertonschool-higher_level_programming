@@ -2,7 +2,9 @@
 """Module for Base class."""
 
 import json
-
+import turtle
+import time
+import random
 
 class Base:
     """Class Base"""
@@ -72,3 +74,27 @@ class Base:
         except FileNotFoundError:
             ls = []
         return ls
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """turtle grapgic module"""
+        ls = list_rectangles + list_squares
+
+        for r in ls:
+            turtle.penup()
+            turtle.fillcolor("black")
+            turtle.pencolor("white")
+            turtle.setx(r.x)
+            turtle.sety(r.y)
+            turtle.seth(0)
+            turtle.pendown()
+            turtle.begin_fill()
+            turtle.forward(r.width)
+            turtle.right(90)
+            turtle.forward(r.height)
+            turtle.right(90)
+            turtle.forward(r.width)
+            turtle.right(90)
+            turtle.forward(r.height)
+            turtle.end_fill()
+        turtle.exitonclick()
