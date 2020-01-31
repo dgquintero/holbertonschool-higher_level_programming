@@ -77,13 +77,12 @@ class Rectangle(Base):
 
     def display(self):
         """print in stdo the rectangle"""
-        
+
         for i in range(self.__y):
             print("\n", end='')
         for j in range(self.__height):
             print(" " * self.__x, end='')
             print("#" * self.__width)
-
 
     def __str__(self):
         """return the str representation of rectangle"""
