@@ -8,6 +8,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 import unittest
 import json
+import pep8
 
 
 class Testpep8(unittest.TestCase):

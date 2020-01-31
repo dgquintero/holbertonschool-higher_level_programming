@@ -7,7 +7,7 @@ Tests for class square
 import unittest
 import json
 from models.base import Base
-from models import square
+from models import Square
 Square = square.Square
 
 
