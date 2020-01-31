@@ -9,6 +9,7 @@ from models.square import Square
 import unittest
 import json
 import pep8
+import unittest
 
 
 class Testpep8(unittest.TestCase):
@@ -74,5 +75,5 @@ class TestBase(unittest.TestCase):
         self.assertEqual(list, [dic])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
