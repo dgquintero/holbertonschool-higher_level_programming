@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" script that lists all states from the database hbtn_0e_0_usa """
+""" script that takes in the name of a state as an argument
+and lists all cities of that state, using the database hbtn_0e_4_usa"""
 
 import MySQLdb
 from sys import argv
@@ -13,9 +14,11 @@ if __name__ == "__main__":
         db=argv[3])
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT cities.name \
+                FROM cities JOIN states ON cities.state_id=states.id \
+                WHERE states.name = %s\
+                ORDER BY cities.id;", (argv[4],))
     myresult = cur.fetchall()
-
     for x in myresult:
         print(x)
     cur.close()

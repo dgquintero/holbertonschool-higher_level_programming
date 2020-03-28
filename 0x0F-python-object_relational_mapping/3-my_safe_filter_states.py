@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" script that lists all states from the database hbtn_0e_0_usa """
+""" Write a script that takes in an argument and displays all
+values in the states table of hbtn_0e_0_usa where name matches the argument """
 
 import MySQLdb
 from sys import argv
@@ -13,7 +14,8 @@ if __name__ == "__main__":
         db=argv[3])
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name = %s\
+    ORDER BY id ASC;", (argv[4],))
     myresult = cur.fetchall()
 
     for x in myresult:
