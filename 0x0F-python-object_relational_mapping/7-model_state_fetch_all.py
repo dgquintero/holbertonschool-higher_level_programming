@@ -8,13 +8,12 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-                                                                        argv[1],
-                                                                        argv[2],
-                                                                        argv[3]))
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
+                                                                    argv[2],
+                                                                    argv[3]))
 
-    Base.metadata.create_all(engine)
-    session = sessionmaker(bind=engine)
+    Base.metadata.create_all(eng)
+    session = sessionmaker(bind=eng)
     ses = session()
     states = ses.query(State).order_by(State.id).all()
     for state in states:
