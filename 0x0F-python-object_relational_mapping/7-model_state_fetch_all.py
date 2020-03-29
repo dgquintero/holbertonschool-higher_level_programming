@@ -1,16 +1,22 @@
 #!/usr/bin/python3
-"""
-Write a python file that contains the class definition
-of a State and an instance Base = declarative_base()
-"""
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+"""script that prints the first State object
+ from the database hbtn_0e_6_usa """
 
-Base = declarative_base()
+from sys import argv
+from model_state import Base, State
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+                                                                        argv[1],
+                                                                        argv[2],
+                                                                        argv[3]))
 
-class State(Base):
-    """Class definition State """
-    __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False)
-    name = Column(String(128), nullable=False)
+    Base.metadata.create_all(engine)
+    session = sessionmaker(bind=engine)
+    ses = session()
+    states = ses.query(State).order_by(State.id).all()
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+    ses.close()
