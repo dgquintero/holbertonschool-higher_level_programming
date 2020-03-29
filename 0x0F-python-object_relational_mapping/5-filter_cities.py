@@ -19,7 +19,6 @@ if __name__ == "__main__":
                 WHERE states.name = %s\
                 ORDER BY cities.id;", (argv[4],))
     myresult = cur.fetchall()
-    for x in myresult:
-        print(x)
+    print(", ".join([city[0] for city in myresult]))
     cur.close()
     db.close()
