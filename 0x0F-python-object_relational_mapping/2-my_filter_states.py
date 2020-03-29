@@ -19,7 +19,7 @@ if __name__ == "__main__":
     myresult = cur.fetchall()
 
     for x in myresult:
-        if x == argv[4]:
+        if x[1] == argv[4]:
             print(x)
     cur.close()
     db.close()
