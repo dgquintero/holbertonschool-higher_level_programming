@@ -16,7 +16,7 @@ if __name__ == "__main__":
     session = sessionmaker(bind=eng)
     ses = session()
     states = ses.query(State).filter(State.name.like("%a%"))\
-    .order_by(State.id).all()
+        .order_by(State.id).all()
     for state in states:
         print("{}: {}".format(state.id, state.name))
     ses.close()
