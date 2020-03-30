@@ -4,6 +4,7 @@ from the database hbtn_0e_6_usa"""
 
 from sys import argv
 from model_state import Base, State
+from model_city import Base, City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
@@ -16,9 +17,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(eng)
     session = sessionmaker(bind=eng)
     ses = session()
-    states = ses.query(State).filter(State.name.like("%a%"))\
-        .all()
-    for x in states:
-        ses.delete(x)
-    ses.commit()
+    for state, city in ses.query(State, City)\
+        .filter(State.id == City.state_id).all():
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
     ses.close()
