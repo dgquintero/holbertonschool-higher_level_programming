@@ -17,5 +17,8 @@ if __name__ == "__main__":
     session = sessionmaker(bind=eng)
     ses = session()
     states = ses.query(State).filter(State.name.like("%a%"))\
-        .delete()
+        .all()
+    for x in states:
+        ses.delete(x)
+    ses.commit()
     ses.close()
