@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' 
+'''
 Module that sends a Post equest with a lleter as parameter
 '''
 import requests
@@ -12,7 +12,7 @@ if __name__ == "__main__":
             print('No result')
         else:
             r = requests.post('http://0.0.0.0:5000/search_user',
-            data={'q': argv[1]})
+                              data={'q': argv[1]})
             k = r.json()
             print('[{}] {}'.format(k.get('id'), k.get('name')))
     main()
