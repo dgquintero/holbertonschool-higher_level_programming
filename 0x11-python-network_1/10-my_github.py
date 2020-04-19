@@ -4,5 +4,11 @@
 '''
 import requests
 from sys import argv
-def main():
-    r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
+
+if __name__ == "__main__":
+    user = argv[1]
+    password = argv[2]
+    api = 'https://api.github.com/user'
+    r = requests.get(api, auth=(user, password))
+    json_dicctionary = r.json()
+    print(json_dicctionary.get("id"))
