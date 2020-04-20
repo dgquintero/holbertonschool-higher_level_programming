@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 '''
-Module that sends a Post equest with a lleter as parameter
+Module that sends a Post request with a lleter as parameter
 '''
+
 import requests
 from sys import argv
+
 
 if __name__ == "__main__":
     values = {'q': ""}
@@ -21,4 +23,4 @@ if __name__ == "__main__":
         else:
             print('No result')
     except:
-        print('Not a valid Json')
+        print('Not a valid JSON')
