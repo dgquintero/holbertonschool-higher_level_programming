@@ -7,4 +7,4 @@ function factorial(num) {
   }
   return (num * factorial(num - 1));
 }
-console.log(factorial(Number(num)));
+console.log(factorial(parseInt(num)));
