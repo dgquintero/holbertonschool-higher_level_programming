@@ -1,9 +1,8 @@
 #!/usr/bin/node
 const myArgs = process.argv.slice(2);
-if (myArgs.length < 2) {
-  console.log(0);
-  return;
+let secondMax = 0;
+if (myArgs.length > 3) {
+  myArgs.sort();
+  secondMax = myArgs[myArgs.length - 2];
 }
-myArgs.sort();
-const secondMax = myArgs[myArgs.length - 2];
 console.log(secondMax);
