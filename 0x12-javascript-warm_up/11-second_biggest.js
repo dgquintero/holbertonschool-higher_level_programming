@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const myArgs = process.argv.slice(2);
+let myArgs = process.argv.slice(2);
 let secondMax = 0;
 if (myArgs.length > 1) {
   myArgs.sort();
