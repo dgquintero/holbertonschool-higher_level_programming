@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // Write a script that gets the contents of
 // a webpage and stores it in a file
 const request = require('request');
