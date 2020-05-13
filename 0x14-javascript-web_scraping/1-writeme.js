@@ -7,5 +7,4 @@ fs.writeFile(file, data, err => {
   if (err) {
     console.log(err);
   }
-  console.log(data);
 });
